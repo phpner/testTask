@@ -13,12 +13,13 @@ class SortArrayController extends Controller
     }
 
     /**
-     * @param array $arrayNumbers
-     * @param string $direct
+     * @param  array $arrayNumbers<array>
+     * @param  string $direct<string>
      * @return array
      */
     public function sortArrayNumbers(array $arrayNumbers, string $direct = "asc"): array
     {
+
         $direct = mb_strtolower($direct);
 
         if ($direct == 'asc') {
@@ -30,13 +31,13 @@ class SortArrayController extends Controller
         }
 
         return $arrayNumbers;
-
     }
 
     /**
-     * @param int $count
-     * @param int $min
-     * @param int $max
+     * @param  int $count
+     * @param  int $min
+     * @param  int $max
+     *
      * @return array
      */
     private function randomArrayNumbers(int $count = 10, int $min = -10, int $max = 10): array

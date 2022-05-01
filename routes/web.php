@@ -17,13 +17,13 @@ use App\Http\Controllers\SortArrayController;
 |
 */
 
-Route::get('/',[SortArrayController::class,'index']);
+Route::get('/', [SortArrayController::class, 'index']);
 
-Route::get('/pages',[PageController::class,'index']);
+Route::get('/pages', [PageController::class, 'index']);
 
-Route::get('/page/{slug}',[PageController::class,'page'])->where('slug', '[a-zA-Z0-9-]+');
+Route::get('/page/{slug}', [PageController::class, 'page'])->where('slug', '[a-zA-Z0-9-]+');
 
-Route::get('/category/{id}',[CategoryController::class,'getCategoryById'])->where('id', '[0-9]+');
-Route::get('/category/{slug}',[CategoryController::class,'getCategoryBySlug'])->where('id', '[a-zA-Z-]+');
+Route::get('/category/{id}', [CategoryController::class, 'getCategoryById'])->where('id', '[0-9]+');
+Route::get('/category/{slug}', [CategoryController::class, 'getCategoryBySlug'])->where('id', '[a-zA-Z-]+');
 
 Route::resource('news', NewsController::class);

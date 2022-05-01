@@ -30,22 +30,21 @@ class PageController extends Controller
     }
 
     /**
-     * @param $slug
+     * @param  $slug
      * @return Collection|void
      */
     public function page($slug)
     {
         $result = DB::table('pages')
             ->rightJoin('seo', 'seo.page_id', '=', 'pages.id')
-            ->where('seo.seo_slug','=', $slug)
-            ->where('pages.status','=','on')
+            ->where('seo.seo_slug', '=', $slug)
+            ->where('pages.status', '=', 'on')
             ->get();
 
-        if ($result->count()){
+        if ($result->count()) {
             return $result;
         }
 
         abort(404);
     }
-
 }
